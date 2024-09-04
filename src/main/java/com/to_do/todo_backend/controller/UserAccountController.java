@@ -1,4 +1,4 @@
-package controller;
+package com.to_do.todo_backend.controller;
 
 import com.to_do.todo_backend.model.UserAccount;
 import com.to_do.todo_backend.service.UserAccountService;
@@ -25,4 +25,18 @@ public class UserAccountController {
         return userAccountService.createUser(userAccount);
     }
 
+    @GetMapping("/{id}")
+    public UserAccount getUserById(@PathVariable int id) {
+        return userAccountService.getUserById(id);
+    }
+
+    @PutMapping("/{id}")
+    public UserAccount updateUser(@PathVariable int id, @RequestBody UserAccount userAccountDetails) {
+        return userAccountService.updateUser(id, userAccountDetails);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable int id) {
+        userAccountService.deleteUser(id);
+    }
 }
