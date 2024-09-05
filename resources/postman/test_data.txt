@@ -1,0 +1,26 @@
+
+{
+"email" : "kamal@gmail.com",
+"password": "abc123",
+"name": "Kamal Vithana",
+"telephone": "+94777456897",
+"age": 45
+}
+
+
+{
+"email" : "vimala@gmail.com",
+"password": "123",
+"name": "Vimala De Silva",
+"telephone": "+94717456897",
+"age": null
+}
+
+
+{
+"email": "kamal@gmail.com",
+"password": "abc123456",
+"name": "Kamal Vithana",
+"telephone": "+94777456897",
+age": 50
+}
