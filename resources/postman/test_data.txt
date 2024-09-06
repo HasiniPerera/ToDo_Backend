@@ -1,22 +1,29 @@
-
+Create User
 {
 "email" : "kamal@gmail.com",
 "password": "abc123",
-"name": "Kamal Vithana",
+"name": "Kamal ",
 "telephone": "+94777456897",
 "age": 45
 }
 
-
 {
 "email" : "vimala@gmail.com",
 "password": "123",
-"name": "Vimala De Silva",
+"name": "Vimala ",
 "telephone": "+94717456897",
 "age": null
 }
 
+{
+"email" : "nimala@gmail.com",
+"password": "abc567",
+"name": "nimala ",
+"telephone": "+947778765499",
+"age": 35
+}
 
+update User Details
 {
 "email": "kamal@gmail.com",
 "password": "abc123456",
@@ -24,3 +31,4 @@
 "telephone": "+94777456897",
 age": 50
 }
+

@@ -1,0 +1,22 @@
+
+Table: User_Account
+ID int Autonumber not null,
+Email varchar(100) not null,
+Password varchar(200) not null,
+Name varchar(500) not null,
+Telephone number varchar(15) null,
+Age int null
+
+Table: todo_list
+
+ID int Autonumber not null,
+user_id
+todos
+created_date
+updated_date
+archived
+
+
+
+
+
