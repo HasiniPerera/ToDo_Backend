@@ -13,5 +13,7 @@ public interface TodoListService {
 
     TodoList createTodo(TodoList todoList);
 
+    TodoList updateTodo(int id, TodoList todoListDetails);
+
 }
 

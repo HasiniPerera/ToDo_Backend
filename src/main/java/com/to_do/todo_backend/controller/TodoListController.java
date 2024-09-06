@@ -29,4 +29,9 @@ public class TodoListController {
         return todoListService.getTodoById(id);
     }
 
+    @PutMapping("/{id}")
+    public TodoList updateTodo(@PathVariable int id, @RequestBody TodoList todoList){
+        return todoListService.updateTodo(id, todoList);
+    }
+
 }
