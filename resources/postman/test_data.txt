@@ -32,3 +32,19 @@ update User Details
 age": 50
 }
 
+crete Todo Item
+{
+    "userAccount" : {
+        "id" : 1,
+        "email" : "kamal@gmail.com",
+        "password": "abc123",
+        "name": "Kamal",
+        "telephone": "+94777456897",
+        "age": 45
+    },
+    "todos" : "do spring boot",
+    "createdDate": "2024-09-09"
+}
+
+
+
