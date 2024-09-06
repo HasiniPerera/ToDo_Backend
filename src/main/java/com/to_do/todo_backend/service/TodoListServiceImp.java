@@ -42,4 +42,8 @@ public class TodoListServiceImp implements TodoListService{
         return null;
     }
 
+    @Override
+    public void deleteTodoById(int id) {
+        todoListRepository.deleteById(id);
+    }
 }
