@@ -16,10 +16,21 @@ public class TodoListServiceImp implements TodoListService{
     @Autowired
     private TodoListRepository todoListRepository;
 
+//    @Override
+//    public List<TodoList> getAllTodos() {
+//        return todoListRepository.findAll();
+//    }
+
     @Override
-    public List<TodoList> getAllTodos() {
-        return todoListRepository.findAll();
+    public List<TodoList> getAllActiveTodosByUserAccountEmail(String userAccountEmail) {
+        return todoListRepository.findAllActiveTodosByUserAccountEmail(userAccountEmail);
     }
+
+    @Override
+    public List<TodoList> getAllTodosByUserAccountEmail(String userAccountEmail) {
+        return todoListRepository.findAllTodosByUserAccountEmail(userAccountEmail);
+    }
+
 
     @Override
     public TodoList getTodoById(int id) {
@@ -45,5 +56,16 @@ public class TodoListServiceImp implements TodoListService{
     @Override
     public void deleteTodoById(int id) {
         todoListRepository.deleteById(id);
+    }
+
+    @Override
+    public TodoList archiveTodo(int id) {
+        TodoList todoList = todoListRepository.findById(id).orElse(null);
+        if (todoList != null) {
+            todoList.setArchived("Y");
+            todoList.setUpdatedDate(new Timestamp((new Date()).getTime()));
+            return todoListRepository.save(todoList);
+        }
+        return null;
     }
 }

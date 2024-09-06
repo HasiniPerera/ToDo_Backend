@@ -29,4 +29,14 @@ public class TodoList {
     @Column(name = "updated_date")
     private Timestamp updatedDate;
 
+    @Column(name = "archived", length = 1, columnDefinition = "CHAR(1) DEFAULT 'N'")
+    private String archived;
+
+    // Automatically setting default value of 'N' before persisting if archived is null
+    @PrePersist
+    public void setDefaultArchived() {
+        if (this.archived == null) {
+            this.archived = "N";
+        }
+    }
 }

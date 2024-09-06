@@ -14,9 +14,18 @@ public class TodoListController {
     @Autowired
     private TodoListService todoListService;
 
-    @GetMapping
-    public List<TodoList> getAllTodos() {
-        return todoListService.getAllTodos();
+//    @GetMapping
+//    public List<TodoList> getAllTodos() {
+//        return todoListService.getAllTodos();
+//    }
+    @GetMapping("/getAllActiveTodosByUserAccountEmail/{userAccountEmail}")
+    public List<TodoList> getAllActiveTodosByUserAccountEmail(@PathVariable String userAccountEmail) {
+        return todoListService.getAllActiveTodosByUserAccountEmail(userAccountEmail);
+}
+
+    @GetMapping("/getAllTodosByUserAccountEmail/{userAccountEmail}")
+    public List<TodoList> getAllTodosByUserAccountEmail(@PathVariable String userAccountEmail) {
+        return todoListService.getAllTodosByUserAccountEmail(userAccountEmail);
     }
 
     @PostMapping
@@ -37,5 +46,10 @@ public class TodoListController {
     @DeleteMapping("/{id}")
     public void deleteTodo(@PathVariable int id) {
         todoListService.deleteTodoById(id);
+    }
+
+    @PutMapping("/archiveTodo/{id}")
+    public TodoList updateTodo(@PathVariable int id) {
+        return todoListService.archiveTodo(id);
     }
 }
